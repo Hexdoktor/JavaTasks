@@ -30,6 +30,13 @@ public class Car {
         gasolineLevel = tankCapacity;
     }
 
+    protected void setSpeed(double newSpeed){
+        this.speed = Math.max(0, Math.min(newSpeed, maxSpeed));
+    }
+    protected void setGasolineLevel(double newLevel){
+        this.gasolineLevel = Math.max(0, Math.min(newLevel, tankCapacity));
+    }
+
     //speed up and lose fuel
     void accelerate() {
         if (gasolineLevel > 0) {
